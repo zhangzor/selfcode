@@ -1,0 +1,11 @@
+div {
+    float: left;
+    width: 50%;
+    height: 100px;
+}
+div:first-child {
+    background-color: skyblue;
+}
+div:last-child {
+    background-color: green;
+}

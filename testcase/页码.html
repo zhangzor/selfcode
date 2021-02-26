@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <input hidden="hidden" id="pageSize">
+        <div id="pageBtn">                    
+        </div>
+    </body>
+    <script>
+        // 分页算法
+        function createPage(dqPage,pageCount){
+        
+        var pageSize  = $("#pageSize").val();
+        var i = 1;
+        i = parseInt(i);
+        $('#pageBtn').html("");
+        var item="";
+        item += "<ul class='pagination my-pagination'>";
+        if(dqPage == 1){
+                item += "<li><a href='#' style='display: none' aria-label='Previous'><span aria-hidden='true'> < </span></a></li>"; 
+        }else{
+                item += "<li><a href='javascript:void(0);' onclick='pageRequest("+(dqPage-1)+","+pageSize+")'  aria-label='Previous'><span aria-hidden='true'> < </span></a></li>"; 
+        }
+        if (pageCount <= 5 ) {//总页数小于五页，则加载所有页
+            
+            for (i; i <= pageCount; i++) {
+                if (i == dqPage) {
+                    item += "<li><a class='disabled'>"+i+"</a></li>"; 
+                }else{
+                    item += "<li><a href='javascript:void(0);' onclick='pageRequest("+i+","+pageSize+")'>"+i+"</a></li>"; 
+                }
+            };
+        }else if (pageCount > 5) {//总页数大于五页，则加载五页
+            if (dqPage < 5) {//当前页小于5，加载1-5页
+                for (i; i <= 5; i++) {
+                    if (i == dqPage) {
+                        item += "<li><a class='disabled'>"+i+"</a></li>"; 
+                    }else{
+                        item += "<li><a href='javascript:void(0);' onclick='pageRequest("+i+","+pageSize+")' >"+i+"</a></li>"; 
+                    }
+                };
+                if (dqPage <= pageCount-2) {//最后一页追加“...”代表省略的页
+                    item += "<li><span style='background: none'> . . . </span></li>";
+                }
+            }else if (dqPage >= 5) {//当前页大于5页
+                for (i; i <= 2; i++) {//1,2页码始终显示
+                    item += "<a href='"+href+i+"' >"+i+"</a>"; 
+                }
+                item += "<li><span style='background: none'> . . . </span></li>";//2页码后面用...代替部分未显示的页码
+                if (dqPage+1 == pageCount) {//当前页+1等于总页码
+                    for(i = dqPage-1; i <= pageCount; i++){//“...”后面跟三个页码当前页居中显示
+                        if (i == dqPage) {
+                            item += "<li><a class='disabled'>"+i+"</a></li>"; 
+                        }else{
+                            item += "<li><a href='javascript:void(0);' onclick='pageRequest("+i+","+pageSize+")' >"+i+"</a></li>"; 
+                        }
+                    }
+                }else if (dqPage == pageCount) {//当前页数等于总页数则是最后一页页码显示在最后
+                    for(i = dqPage-2; i <= pageCount; i++){//...后面跟三个页码当前页居中显示
+                        if (i == dqPage) {
+                            item += "<li><a class='disabled'>"+i+"</a></li>"; 
+                        }else{
+                            item += "<li><a href='javascript:void(0);' onclick='pageRequest("+i+","+pageSize+")' >"+i+"</a></li>"; 
+                        }
+                    }
+                }else{//当前页小于总页数，则最后一页后面跟...
+                    for(i = dqPage-1; i <= dqPage+1; i++){//dqPage+1页后面...
+                        if (i == dqPage) {
+                            item += "<li><a class='disabled'>"+i+"</a></li>"; 
+                        }else{
+                            item += "<li><a href='javascript:void(0);' onclick='pageRequest("+i+","+pageSize+")' >"+i+"</a></li>"; 
+                        }
+                    }
+                    item += "<li><span style='background: none'> . . . </span></li>";
+                }
+            }
+        }
+        
+        if(dqPage == pageCount){
+                    item += "<li><a href='#' style='display: none' aria-label='Previous'><span aria-hidden='true'> > </span></a></li>"; 
+            }else{
+                    item += "<li><a href='javascript:void(0);' onclick='pageRequest("+(dqPage+1)+","+pageSize+")' aria-label='Previous'><span aria-hidden='true'> > </span></a></li>"; 
+            }
+        item += "<li>";
+        item +="<div class='btn-group' role='group'>";
+        item +="<button type='button' class='btn btn-default dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>10条/页</button>";
+        item +=    "<ul class='dropdown-menu'>";
+        item +=     "<li><a href='javascript:void(0);' onclick='pageRequest("+1+","+10+")'>10条</a></li>";
+        item +=     "<li><a href='javascript:void(0);' onclick='pageRequest("+1+","+20+")'>20条</a></li>";
+        item +=     "<li><a href='javascript:void(0);' onclick='pageRequest("+1+","+30+")'>30条</a></li>";
+        item +=     "<li><a href='javascript:void(0);' onclick='pageRequest("+1+","+40+")'>40条</a></li>";
+        item +=     "<li><a href='javascript:void(0);' onclick='pageRequest("+1+","+50+")'>50条</a></li>";
+        item +=    "</ul>";
+        item += "</div>";
+        item += "</li>";
+        item +="<li>跳至</li>";
+        item +="<li><input type='text' id='selectIndex' class='form-control page-number' placeholder='5'>页<input type='button' style='background: none' onclick='toInextPage("+pageSize+","+pageCount+")' value='确定'></li>";
+        item +="<li></li>";
+        item +="</ul>";
+        $('#pageBtn').append(item);  
+        }
+    </script>
+</html>

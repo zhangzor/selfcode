@@ -1,0 +1,183 @@
+
+.main {
+    width: 980px;
+    height: 455px;
+    margin-left: 220px;
+    margin-top: 10px;
+}
+.main .focus {
+    float: left;
+    width: 721px;
+    height: 100%;
+}
+.main .newsFlash {
+    float: right;
+    width: 250px;
+    height: 100%;
+}
+.newsFlash .news {
+    height: 165px;
+    border: 1px solid #e4e4e4;
+}
+.newsFlash .news .news-hd {
+    height: 33px;
+    line-height: 33px;
+    padding: 0 15px;
+    border-bottom: 1px dotted #e4e4e4;
+}
+.newsFlash .news .news-hd h5 {
+    float: left;
+    font-size: 14px;
+}
+.newsFlash .news .news-hd a {
+    float: right;
+}
+.newsFlash .news .news-hd a::after {
+    font-family: 'icomoon';
+    content: '\ea3c';
+}
+.newsFlash .news .news-bd {
+    padding: 5px 15px 0;
+}
+.newsFlash .news .news-bd ul li {
+    height: 24px;
+    line-height: 24px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.newsFlash .lifeService {
+    overflow: hidden;
+    border: 1px solid #e4e4e4;
+    border-top: 0;
+    height: 209px;
+}
+.newsFlash .lifeService ul {
+    width: 252px;
+}
+.newsFlash .lifeService ul li {
+    float: left;
+    width: 63px;
+    height: 71px;
+    border-right: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+    text-align: center;
+}
+.newsFlash .lifeService ul li i {
+    display: inline-block;
+    width: 24px;
+    height: 28px;
+    background-image: url(../images/jlt.png);
+    margin-top: 12px;
+}
+.newsFlash .bargain {
+    padding-top: 5px;
+}
+/* 推荐模块 */
+.recom {
+    height: 163px;
+    margin-top: 12px;
+}
+.recom .recom-hd {
+    float: left;
+    width: 205px;
+    height: 100%;
+}
+.recom .recom-bd {
+    float: left;
+    margin-left: 3px;
+}
+.recom .recom-bd ul li {
+    position: relative;
+    float: left;
+}
+.recom .recom-bd ul li:nth-child(-n+3)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 1px;
+    height: 145px;
+    background-color: #ddd;
+}
+/* 家用电器模块 */
+.floor .box_hd {
+    height: 30px;
+    border-bottom: 2px solid #c81623;
+}
+.floor .box_hd h3{
+    float: left;
+    font-size: 18px;
+    color: #c81623;
+    font-weight: normal;
+}
+.floor .box_hd .tab_list {
+    float: right;
+    line-height: 30px;
+}
+.floor .box_hd .tab_list ul li{
+    float: left;
+}
+.floor .box_hd .tab_list ul li a{
+    float: left;
+    padding: 0 15px;
+}
+.floor .w {
+    margin-top: 30px;
+}
+.floor .box_bd {
+    height: 361px;
+}
+.box_bd>div {
+    float: left;
+    height: 361px;
+}
+.col_210 {
+    float: left;
+    width: 210px;
+    height: 100%;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+.col_210 ul {
+    padding-left: 12px;
+    height: 100%;
+}
+.col_210 ul li {
+    float: left;
+    width: 85px;
+    height: 34px;
+    border-bottom: 1px solid #ccc;
+    line-height: 34px;
+    text-align: center;
+    margin-right: 10px;
+}
+.col_329 {
+    float: left;
+    width: 329px;
+    height: 100%;
+}
+.col_329 img {
+    width: 100%;
+}
+.col_221 {
+    float: left;
+    width: 221px;
+    height: 100%;
+    border-right: 1px solid #ccc;
+}
+.col_221 img {
+    width: 100%;
+}
+.col_219 {
+    float: left;
+    width: 219px;
+    height: 100%;
+}
+.col_219 img {
+    width: 100%;
+}
+.poto {
+    display: block;
+    border-bottom: 1px solid #ccc;
+}

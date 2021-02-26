@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            overflow: hidden;
+            font-size: 16px;
+            width: 0;
+            height: 30px;
+            background-color: skyblue;
+            white-space: nowrap;
+            /* steps 就是分几步来完成我们的动画 有了steps 就不要在写 ease 或者linear 了 */
+            animation: move 4s steps(10) forwards;
+        }
+
+        @keyframes move {
+            0% {
+                width: 0;
+            }
+
+            100% {
+                width: 230px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>Mark·Mckenna，Wayne，Del</div>
+</body>
+
+</html>

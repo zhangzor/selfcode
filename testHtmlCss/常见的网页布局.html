@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .top {
+            height: 50px;
+            background-color: skyblue;
+        }
+
+        .banner {
+            width: 980px;
+            height: 150px;
+            background-color: skyblue;
+            margin: 10px auto;
+        }
+
+        .clearfix:after {
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        .clearfix {
+            /* IE6,7专有 */
+            *zoom: 1;
+        }
+
+        .box {
+            /* overflow: hidden; */
+            width: 980px;
+            /* height: 270px; */
+            background-color: #fff;
+            margin: 0 auto;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .box li {
+            width: 237.5px;
+            height: 270px;
+            background-color: skyblue;
+            float: left;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+
+        .box .last {
+            margin: 0;
+            margin-top: 10px;
+        }
+
+        /* .clear {
+            clear: both;
+        } */
+
+        .footer {
+            height: 270px;
+            background-color: skyblue;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">top</div>
+    <div class="banner">banner</div>
+    <ul class="box clearfix">
+        <li>box1</li>
+        <li>box2</li>
+        <li>box3</li>
+        <li>box3</li>
+        <li class="last">box4</li>
+        <!-- <div class="clear"></div> -->
+    </ul>
+    </div>
+    <div class="footer">footer</div>
+</body>
+
+</html>

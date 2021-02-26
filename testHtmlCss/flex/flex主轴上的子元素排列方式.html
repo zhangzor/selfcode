@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            /* 给父级添加flex属性 */
+            display: flex;
+            width: 500px;
+            height: 500px;
+            background-color: skyblue;
+            /* 默认的主轴是X轴 */
+            flex-direction: row;
+            /* justify-content: 是设置主轴上子元素的排列方式 */
+            /* justify-content: flex-start; */
+            /* 从尾部开始 */
+            /* justify-content: flex-end; */
+            /* 让我们子元素居中对齐 */
+            /* justify-content: center; */
+            /* 平分剩余空间 */
+            /* justify-content: space-around; */
+            /* 先两边贴边，再分配剩余空间 */
+            justify-content: space-between;
+        }
+
+        span {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+    </div>
+</body>
+
+</html>

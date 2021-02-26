@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            margin: 100px auto;
+            transition: all 2s;
+        }
+
+        div:hover {
+            /* 1、里面写的是数字，不跟单位 就是倍数的意思 1就是1倍，2就是两倍 */
+            transform: scale(2, 2);
+            /* 只修改一种 */
+            transform: scale(2, 1);
+            /* 填写一个数字，等比例放大 */
+            transform: scale(2);
+            /* 填写小于1的数就是缩小 */
+            transform: scale(0.5, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

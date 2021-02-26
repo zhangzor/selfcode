@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1、把所有的偶数even孩子选出来 */
+        ul li:nth-child(even) {
+            background-color: #ccc;
+        }
+
+        /* 2、把所有的奇数odd孩子选出来 */
+        ul li:nth-child(odd) {
+            background-color: skyblue;
+        }
+
+        /* 3、nth-child(n) 从0开始 每次加1 往后面计算 这里面必须是n 不能是其他的字母 选择了所有的孩子 */
+        /* ol li:nth-child(n) {
+            background-color: green;
+        } */
+
+        /* 4、nth-child(2n) 从0开始 每次乘2 等价于even */
+        /* ol li:nth-child(2n) {
+            background-color: green;
+        } */
+        /* 5、nth-child(2n+1) 从0开始 每次乘2，加1 等价于odd */
+        /* ol li:nth-child(2n+1) {
+            background-color: green;
+        } */
+        /* 还有：5n  -> 5  10  15……
+             n+5 -> 从第5个开始（包含第五个）到最后
+             -n+5 -> 前五个（包含第五个） */
+        /* :nth-child() 会把所有的盒子都排列序号 */
+        /* 执行的时候首先看：nth-child() 然后再看前面的标签 */
+        section div:nth-child(1) {
+            background-color: red;
+        }
+
+        /* :nth-of-type() 会把指定元素的盒子排列序号 */
+        /* 执行的时候首先看前面的标签，然后再看nth-of-type() */
+        section div:nth-of-type(1) {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ol>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+    <section>
+        <p>冥冥之中</p>
+        <div>自有安排</div>
+        <div>岁月荏苒</div>
+        <div>奇迹再现</div>
+    </section>
+</body>
+
+</html>

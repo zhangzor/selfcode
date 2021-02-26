@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .text {
+            width: 220px;
+            height: 70px;
+            margin: 50px auto;
+            background-color: skyblue;
+            /* 如果文字一行无法显示完全，就自动换行 */
+            /* white-space: normal; */
+            /*1、 如果文字一行无法显示开，也强制在一行显示 */
+            /* white-space: nowrap; */
+            /* 2、溢出的部分隐藏起来 */
+            overflow: hidden;
+            /* 文字溢出来的时候用省略号 */
+            text-overflow: ellipsis;
+            /* 弹性伸缩盒子模型显示 */
+            display: -webkit-box;
+            /* 限制在一个块元素显示的文本的行数 */
+            -webkit-line-clamp: 2;
+            /* 设置或检索伸缩盒对象的子元素的排列方式 */
+            -webkit-box-orient: vertical;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="text">
+        震惊！光天化日之下，一男子竟然当街唱起了各个国家有各个国家的国歌！
+    </div>
+</body>
+
+</html>

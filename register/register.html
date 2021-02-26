@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <link rel="stylesheet" href="register.css" />
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="../config.js"></script>
+    <script src="verifiers.js"></script>
+</head>
+<body>
+    <div class="box">
+        <h2>Register</h2>
+        <form name="register">
+            <div class="email">
+                <div class="email_em">
+                    <input type="email" id="email" required="" autocomplete="off">
+                    <label>Email</label>
+                </div>
+                <div class="second">
+                    <input type="button" class="seconds" value="获取验证码">
+                </div>
+            </div>
+            <div style="clear:both"></div>
+            <div class="inputBox">
+                <input type="text" class="securityCode" required="">
+                <label>请输入验证码</label>
+            </div>
+            <div class="inputBox">
+                <input type="password" id="pwd" required="">
+                <label>Password</label>
+            </div>
+            <div class="inputBox">
+                <input type="password" id="ConfirmPassword" required="">
+                <label>Confirm Password</label>
+            </div>
+            <div class="submit">
+                <input type="button" class="button" value="register">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

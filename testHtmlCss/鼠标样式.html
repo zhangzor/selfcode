@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            /* 取消轮廓 */
+            outline: none;
+        }
+
+        .text {
+            resize: none;
+            outline: none;
+            /* 使其图片与文字处于同一水平线 */
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <!-- 当鼠标停在该模块上显示箭头 -->
+        <li style="cursor: default;">Mark Mckenna</li>
+        <!-- 当鼠标停在该模块上显示手指 -->
+        <li style="cursor: pointer;">Mark Mckenna</li>
+        <!-- 当箭头停在该模块上显示移动 -->
+        <li style="cursor: move;">Mark Mckenna</li>
+        <!-- 当箭头停在该模块上显示输入I -->
+        <li style="cursor: text;">Mark Mckenna</li>
+        <!-- 当箭头停在该模块上显示禁止 -->
+        <li style="cursor: not-allowed;">Mark Mckenna</li>
+    </ul>
+    <!-- 取消表单轮廓 -->
+    <input type="text">
+    <!-- 防止拖拽文本域 -->
+    <textarea name="" id="" cols="30" rows="10" class="text"></textarea>
+</body>
+
+</html>

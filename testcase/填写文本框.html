@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #msg {
+            width: 350px;
+            height: 300px;
+            border: 1px solid #000000;
+        }
+    </style>
+    <script>
+        var arr = [/tmd/ig,/wdnmd/ig,/fuck/ig,/shit/ig];
+        function btnClick(){
+            var tTxt = document.getElementById("txt");
+            var tMsg = document.getElementById("msg");
+            var txtCopy = tTxt.value;
+            for(var i = 0;i < arr.length;i++){
+                txtCopy = txtCopy.replace(arr[i],"*");
+            }
+            tMsg.innerHTML = txtCopy;
+            tMsg.value = '';
+        }
+    </script>
+</head>
+<body>
+    <textarea name="" id="txt" id="" cols="30" rows="10"></textarea>
+    <button onclick="btnClick();">发布</button>
+    <div id="msg"></div>
+</body>
+</html>

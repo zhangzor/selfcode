@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 220px;
+            height: 200px;
+            background-color: #ffffff;
+            border: 1px solid #000000;
+            text-align: center;
+        }
+        #div1 input{
+            width: 180px;
+            height: 30px;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        #div1 span{
+            font-size: 12px;
+            color: red;
+        }
+    </style>
+    <script>
+        function fuc(){
+            //通过id定位到输入框
+            var username = document.getElementById("username");
+            var usernamespan = document.getElementById("username_span");
+            //获取输入框所输入的内容
+            var usernameCopy = username.value;
+            //获取内容的长度，用来作判断
+            if(usernameCopy.length < 6 || usernameCopy.length > 18){
+                usernamespan.innerHTML = "!长度应为6~18位";
+            } else if(!isABC(usernameCopy[0])){//通过下标获取首字母，字符串可以和数组一样使用下标获取对应的元素
+                usernamespan.innerHTML = "!需以字母开头";
+            } else{
+                //定义一个变量，赋值true，遍历查看是否都符合数字字母下划线
+                var isYes = true;
+                for(var i = 0;i < usernameCopy.length;i++){
+                    if(!isDEF(usernameCopy[i])){
+                        isYes = false;
+                        break;
+                    }
+                }
+                if(isYes){
+                    usernamespan.innerHTML = "该用户名可以使用";
+                }else{
+                    usernamespan.innerHTML = "!用户名由字母、数字、下划线组成";
+                }
+            }
+        }
+        //判断单个字符是否为字母
+        function isABC(charStr){
+            if(charStr >= "a" && charStr <= "z" || charStr >= "A" && charStr <= "Z"){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        //判断单个字符是否符合数字字母下划线
+        function isDEF(charStr){
+            if(charStr >= "a" && charStr <= "z" || charStr >= "A" && charStr <= "Z" || charStr >= 0 && charStr <= 9 || charStr == 95){
+                return true;
+            }else{
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <input type="username" id="username" placeholder="用户名" onblur="fuc();">
+        <span id="username_span">用户名长度应为6~18位数，可以使用字母、数字、下划线，需已字母开头</span>
+        <input type="password" id="pwd">
+    </div>
+</body>
+</html>

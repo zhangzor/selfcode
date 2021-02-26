@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: inline;
+        }
+
+        #span {
+            font-size: 8px;
+            color: #000;
+        }
+    </style>
+    <script>
+        // 使用setTimeout给输入框一个默认当前的时间日期
+        let timeId = setTimeout(function () {
+            let date = new Date();
+            document.getElementById('input').value = (date.getFullYear()) + "-" + ((date.getMonth() + 1) < 10 ? ('0' + (date.getMonth() + 1)) : (date.getMonth() + 1)) + "-" + (date.getDate() < 10 ? ('0' + date.getDate()) : date.getDate()) + ' ' + (date.getHours() < 10 ? ('0' + date.getHours()) : date.getHours()) + ':' + (date.getMinutes() < 10 ? ('0' + date.getMinutes()) : date.getMinutes()) + ':' + (date.getSeconds() < 10 ? ('0' + date.getSeconds()) : date.getSeconds());
+        }, 0);
+        // 创建一个obtain函数，用来将输入框的内容转换后从输出框显示
+        function obtain() {
+            let initial = document.getElementById('input').value;//定义一个变量，用于获取用户输入的内容
+            let span = document.getElementById('span').value;//定义一个变量，用于用户填写的数据错误时提醒使用
+            // 接下来判断用户输入的数据 ，如果是日期类型，则执行第一个if，如果是时间戳，则执行else if，如果都不是，提示变红
+            if (isNaN(initial) && !isNaN(Date.parse(initial))) {//不是数字类型，并且该时间的毫秒数是数字类型
+                return document.getElementById('output').value = (new Date(initial)).getTime() / 1000;
+            }
+            else if (!isNaN(initial)) {//如果是纯数字类型
+                let timeStamp = new Date(initial * 1000);
+                let year = timeStamp.getFullYear();
+                let month = (timeStamp.getMonth() + 1) < 10 ? '0' + (timeStamp.getMonth() + 1) : (timeStamp.getMonth() + 1);
+                let date = timeStamp.getDate() < 10 ? '0' + timeStamp.getDate() : timeStamp.getDate();
+                let hour = timeStamp.getHours() < 10 ? '0' + timeStamp.getHours() : timeStamp.getHours();
+                let minute = timeStamp.getMinutes() < 10 ? '0' + timeStamp.getMinutes() : timeStamp.getMinutes();
+                let second = timeStamp.getSeconds() < 10 ? '0' + timeStamp.getSeconds() : timeStamp.getSeconds();
+                return document.getElementById('output').value = year + "-" + month + "-" + date + " " + hour + ":" + minute + ":" + second;
+            } else {//都不是的话，下面提示报红色
+                document.getElementById('span').style.color = "red";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- 功能实现，想将两个文本框，前面文本框输入日期或者时间戳，后面文本框输出对应的时间戳或日期 -->
+    <!-- 1、先创建一个盒子，用于用户输入，创建盒子的原因是为了，在该文本框下提示报错信息 -->
+    <div>
+        <input type="text" id="input" placeholder="输入日期或者时间戳"> <br>
+        <span id="span">例如：2021-02-24 11:00:00 或 12346511</span>
+    </div>
+    <!-- 2、再创建一个按钮，通过点击该按钮触发函数，调用函数 -->
+    <button class="transformation" onClick="obtain();">转换</button>
+    <!-- 3、创建一个输出文本框，用于输出用户所输入的内容对应的结果 -->
+    <input type="text" id="output" placeholder="转换后的结果">
+</body>
+
+</html>

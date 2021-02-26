@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 100px;
+            height: 200px;
+            padding: 50px;
+            background-color: orange;
+            border: 1px solid #000000;
+            margin: auto;
+        }
+        span{
+            font-size: 20px;
+        }
+        #div1 button{
+            width: 100px;
+            height: 30px;
+            font-size: 16px;
+            margin-top: 20px;
+            background-color: black;
+            color: white;
+        }
+    </style>
+    <script>
+        function $(id) { 
+            return document.getElementById(id);
+        }
+        var i = 0;
+        var timer = null;
+        var judge = true;
+        window.onload = function(){
+            //获取按钮
+            function startTime(){
+                timer = setInterval(function(){
+                    i++;
+                    $("sec").innerHTML = doubleNum(i % 60);
+                    $("min").innerHTML = doubleNum(parseInt(i / 60) % 60);
+                    $("hour").innerHTML = doubleNum(parseInt(i / 3600));
+                },1000);
+            }
+
+            function stopTime(){
+                clearInterval(timer);
+            }
+
+            $("start").onclick = function(){
+                if(judge){
+                    $("start").innerHTML = "继续";
+                    judge = false;
+                    startTime();
+                }else{
+                    $("start").innerHTML = "开始";
+                    judge = true;
+                    stopTime();
+                }
+            }
+
+            $("reset").onclick = function(){
+                clearInterval(timer);
+                i = 0;
+                judge = true;
+                $("start").innerHTML = "开始";
+                $("sec").innerHTML = "00";
+                $("min").innerHTML = "00";
+                $("hour").innerHTML = "00";
+            }
+        }
+        function doubleNum(n){
+            if(n < 10){
+                return "0" + n;
+            }else{
+                return n;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <span id="hour">00</span>
+        <span>:</span>
+        <span id="min">00</span>
+        <span>:</span>
+        <span id="sec">00</span>
+        <br />
+        <button id="start">开始</button>
+        <button id="reset">复位</button>
+    </div>
+</body>
+</html>
