@@ -18,7 +18,11 @@
 	2、git commit -m "注释"
 	3、git push
 	
-	
+修改内容:
+	1、git add .
+	2、git commit -m "注释"
+	3、git push
+
 1.使用git clone命令将新建的git 项目信息下载到本地
 git clone  git address
 2.进入git项目的本地文件夹，将自己的项目复制到这个git 文件夹，查看状态，提交所有的新文件
