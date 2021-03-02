@@ -11,7 +11,7 @@
 	5.帮本地仓库默认指向一个远程仓库
 		git remote add origin https://github.com/zhangzor/selfcode.git
 	6.提交代码
-		git push -u origin main
+		git push -u origin master
 
 更新git文件，代码：
 	1、git add [文件名]

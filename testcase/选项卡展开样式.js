@@ -8,7 +8,11 @@ for (let i = 0; i < items.length; i++) {
         for (let j = 0; j < lis.length; j++) {
             lis[j].style.display = 'none';
         }
-        lis[this.index].style.display = 'block';
+        if (cLick % 2 == 0 && cLick != 0) {
+            lis[this.index].style.display = 'none';
+        } else {
+            lis[this.index].style.display = 'block';
+        }
         console.log(53, this.index);
     }
 }
