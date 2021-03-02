@@ -66,15 +66,22 @@
             <div class="item">内容2</div>
         </div>
     </div>
+    <!-- 因为如果写在<head>里，此时DOM还没有解析完成。 -->
     <script>
         var tiTle = document.getElementsByTagName('li');
+        var items = document.getElementsByClassName('item');
         console.log(71, tiTle.length);
         for (let i = 0; i < tiTle.length; i++) {
+            tiTle[i].index = i;
             tiTle[i].onclick = function () {
                 for (let j = 0; j < tiTle.length; j++) {
                     tiTle[j].className = '';
                 }
                 this.className = 'title';
+                for (let j = 0; j < items.length; j++) {
+                    items[j].style.display = 'none';
+                }
+                items[this.index].style.display = 'block';
             }
         }
     </script>

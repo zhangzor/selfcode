@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 150px;
+            border: 1px solid #ccc;
+            padding: 0;
+            margin: auto;
+        }
+
+        .top {
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            border-bottom: 1px solid #ccc;
+            text-align: center;
+        }
+
+        .item {
+            width: 100%;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+        }
+
+        ul {
+            display: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            list-style: none;
+            width: 110px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="top">头部文字</div>
+        <div class="botton">
+            <div class="item">
+                <p>标题1</p>
+                <ul>
+                    <li>内容1</li>
+                    <li>内容1</li>
+                    <li>内容1</li>
+                </ul>
+            </div>
+            <div class="item">
+                <p>标题2</p>
+                <ul>
+                    <li>内容2</li>
+                    <li>内容2</li>
+                    <li>内容2</li>
+                </ul>
+            </div>
+            <div class="item">
+                <p>标题3</p>
+                <ul>
+                    <li>内容3</li>
+                    <li>内容3</li>
+                    <li>内容3</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 因为如果写在<head>里，此时DOM还没有解析完成。 -->
+    <script src="选项卡展开样式.js"></script>
+</body>
+
+</html>
