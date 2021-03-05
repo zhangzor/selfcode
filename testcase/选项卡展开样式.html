@@ -24,7 +24,9 @@
 
         .item {
             width: 100%;
+            height: 50px;
             text-align: center;
+            line-height: 50px;
             border-bottom: 1px solid #ccc;
         }
 
@@ -40,30 +42,38 @@
             height: 50px;
         }
     </style>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".item").click(function () {
+                $("ul").eq($(".item").index(this)).toggle();
+            });
+        });
+    </script>
 </head>
 
 <body>
     <div class="box">
         <div class="top">头部文字</div>
         <div class="botton">
-            <div class="item">
-                <p>标题1</p>
+            <div>
+                <div class="item">标题1</div>
                 <ul>
                     <li>内容1</li>
                     <li>内容1</li>
                     <li>内容1</li>
                 </ul>
             </div>
-            <div class="item">
-                <p>标题2</p>
+            <div>
+                <div class="item">标题2</div>
                 <ul>
                     <li>内容2</li>
                     <li>内容2</li>
                     <li>内容2</li>
                 </ul>
             </div>
-            <div class="item">
-                <p>标题3</p>
+            <div>
+                <div class="item">标题3</div>
                 <ul>
                     <li>内容3</li>
                     <li>内容3</li>
@@ -73,7 +83,7 @@
         </div>
     </div>
     <!-- 因为如果写在<head>里，此时DOM还没有解析完成。 -->
-    <script src="选项卡展开样式.js"></script>
+    <!-- <script src="选项卡展开样式.js"></script> -->
 </body>
 
 </html>
