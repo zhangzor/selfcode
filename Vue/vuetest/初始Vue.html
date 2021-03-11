@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div id="app">
+        <span>{{message}}</span>
+        <span>{{name}}</span>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        //let(一般用于定义变量)/const(一般用于定义常量)
+        const app = new Vue({
+            el: '#app', //用于挂载要管理的元素(定位到元素)
+            data: {//定义数据(展示数据)
+                message: '加钱啊，加钱啊！',
+                name: '给我上啊'
+            }
+        })
+    </script>
+</body>
+
+</html>
