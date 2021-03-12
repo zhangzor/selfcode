@@ -6,12 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .active {
+            color: red;
+        }
+    </style>
 </head>
 
 <body>
     <div id="app">
         <ul>
-            <li v-for="item in movies">{{item}}</li>
+            <li v-for="(item,index) in movies" @click="activeIndex=index" :class="{'active':activeIndex==index}">
+                {{item}}</li>
         </ul>
     </div>
 
@@ -20,7 +26,8 @@
         const lis = new Vue({
             el: '#app',
             data: {
-                movies: ['猫鼠游戏', '虫师', 'wayne', '秒速五厘米']
+                movies: ['猫鼠游戏', '虫师', 'wayne', '秒速五厘米'],
+                activeIndex: null
             }
         })
     </script>
