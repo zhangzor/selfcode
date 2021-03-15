@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 1、.stop修饰符的使用(阻止事件冒泡) -->
+        <div @click='divClick'>
+            wayne
+            <button @click.stop='btn'>按钮</button>
+        </div>
+        <br>
+        <!-- 2、.prevent修饰的使用 -->
+        <form action="wayne">
+            <input type="submit" value="提交" @click.prevent="submitClick">
+        </form>
+        <!-- 3、监听某个键盘的键帽 -->
+        <input type="text" @keyup.enter="keyClick">
+        <!-- 4、只触发一次回调 -->
+        <input type="submit" name="" id="" @click.once="onceClick">
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        const test = new Vue({
+            el: '#app',
+            data: {
+                message: '笑话'
+            },
+            methods: {
+                btn() {
+                    console.log("btn————点击按钮");
+                },
+                divClick() {
+                    console.log("divClick——点击盒子");
+                },
+                submitClick() {
+                    console.log("submitClick————点击提交");
+                },
+                keyClick() {
+                    console.log("keyClick————监听回车");
+                },
+                onceClick() {
+                    console.log("onceClick————只触发一次回调");
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #app {
+            width: 200px;
+            height: 300px;
+            margin: auto;
+            padding: 0;
+            border: 1px solid #ccc;
+        }
+
+        .top {
+            width: 100%;
+            height: 70px;
+            display: flex;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .top div {
+            flex: 1;
+            flex-direction: column;
+            width: 50%;
+            text-align: center;
+            line-height: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="top">
+            <div @click="userName">账号登录</div>
+            <div @click="phoneName">手机号登录</div>
+        </div>
+        <div class="button">
+            <div v-if='isuser'>
+                <label for="username">用户账号</label>
+                <input type="text" id="username" placeholder="请输入用户账号" key="username"><br>
+                <label for="pwd">用户密码</label>
+                <input type="text" id="pwd" placeholder="请输入用户密码" key="pwd"><br>
+                <button>登录</button>
+            </div>
+            <div v-else>
+                <label for="phone">手机号</label>
+                <input type="text" id="phone" placeholder="请输入手机号" key="phone"><br>
+                <label for="VerificationCode">验证码</label>
+                <input type="text" id="VerificationCode" placeholder="请输入验证码" key="VerificationCode">
+                <button>点击获取验证码</button>
+                <br>
+                <button>登录</button>
+            </div>
+        </div>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        const test = new Vue({
+            el: "#app",
+            data: {
+                isuser: true
+            },
+            methods: {
+                userName() {
+                    return this.isuser = true;
+                },
+                phoneName() {
+                    return this.isuser = false;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
