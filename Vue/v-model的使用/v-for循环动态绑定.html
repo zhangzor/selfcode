@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <select v-model="selected">
+            <option v-for="item in names" :value="item.value">{{item.surname}}</option>
+        </select>
+        <h2>你所选择的是：{{selected}}</h2>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        const test = new Vue({
+            el: "#app",
+            data: {
+                selected: "Bin",
+                names: [
+                    { surname: "Zhang", value: "Bin" },
+                    { surname: "Mark", value: "Mckenna" },
+                    { surname: "Tian", value: "Cheng" },
+                    { surname: "Wayne", value: "Man" },
+                    { surname: "Del", value: "Woman" }
+                ]
+            }
+        })
+    </script>
+</body>
+
+</html>

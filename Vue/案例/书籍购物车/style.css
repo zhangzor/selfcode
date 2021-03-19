@@ -1,0 +1,17 @@
+table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    border-spacing: 0;
+    /* border-collapse:collapse; 表示边框合并在一起。
+    border-collapse:separate;表示边框之间的间距，间距的大小用border-spacing:px;定义大小。 */
+}
+th,td{
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+th{
+    background-color: #f7f7f7;
+    color: #5c6b77;
+    font-weight: 600px;
+}

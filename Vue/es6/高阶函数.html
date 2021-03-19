@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // filter/map/reduce
+        // filter中的回调函数有一个要求：必须返回一个boolean值
+        // true：当返回true时，函数内部会自动将这次回调的n加入到新的数组中
+        // false：当返回false时，函数内部会过滤掉这次的n
+        // 1、filter函数的使用
+        const nums = [100, 20, 12, 50, 76, 48, 136, 52];
+        let newNums = nums.filter(function (n) {
+            return n > 50;
+        })
+        // 2、map函数的使用
+        let newNums2 = newNums.map(function (n) {
+            return n * 2;
+        })
+        // 3、reduce函数的使用
+        // reduce作用对数组中所有的内容进行汇总
+        // 对渣斌的情人进行总结 发现45个情人 不包含一夜情 或超过罗志祥成为时间管理第一人
+        let newNums3 = newNums2.reduce(function (preValue, n) {
+            return preValue + n;
+        }, 0)
+    </script>
+</body>
+
+</html>
