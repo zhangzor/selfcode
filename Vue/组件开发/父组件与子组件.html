@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <cpn2></cpn2>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        const cpnSon = Vue.extend({
+            template: `
+            <div>
+                <h2 style="color:blue;">子组件：快点学，学快点，算我求你了，学快点</h2>
+            </div>
+            `
+        })
+        const cpnFather = Vue.extend({
+            template: `
+                <div>
+                    <h2 style="color:red;">父组件：快点学，学快点，算我求你了，学快点</h2>
+                    <cpn1></cpn1>
+                </div>
+            `,
+            components: {
+                "cpn1": cpnSon
+            }
+        })
+        const test = new Vue({
+            el: "#app",
+            data: {
+
+            },
+            components: {
+                "cpn2": cpnFather
+            }
+        })
+    </script>
+</body>
+
+</html>

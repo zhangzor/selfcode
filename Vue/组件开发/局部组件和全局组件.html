@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <Cpn></Cpn>
+        <cpn1></cpn1>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        const Cpn11 = Vue.extend({
+            template: `
+                <div>你怎么睡得着的，你这个年纪，你怎么睡着的，你没学过啊</div>
+            `
+        })
+        //全局组件
+        Vue.component('Cpn', Cpn11)
+
+        const test = new Vue({
+            el: '#app',
+            data: {
+
+            },
+            //局部组件
+            components: {
+                'cpn1': Cpn11
+            }
+        })
+    </script>
+</body>
+
+</html>

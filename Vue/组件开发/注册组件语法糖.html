@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <org1></org1>
+        <org2></org2>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        // 全局注册组件
+        Vue.component("org1", {
+            template: `
+                <div>
+                    <h2>学快点，时间不多了，人心不古啊</h2>
+                </div>
+            `
+        })
+
+        const test = new Vue({
+            el: "#app",
+            data: {
+
+            },
+            // 局部注册组件
+            components: {
+                "org2": {
+                    template: `
+                        <div>
+                            <h2>学快点，时间不多了，人心不古啊</h2>
+                        </div>
+                    `
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

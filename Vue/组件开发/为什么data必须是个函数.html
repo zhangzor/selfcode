@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <cpn></cpn>
+    </div>
+    <template id="cter">
+        <div>
+            <h2>计数器：{{counter}}</h2>
+            <button @click="increment"> + </button>
+            <button @click="decrement"> - </button>
+        </div>
+    </template>
+    <script src="../vue.js"></script>
+    <script>
+        Vue.component("cpn", {
+            template: "#cter",
+            data() {
+                return {
+                    counter: 0
+                }
+            },
+            methods: {
+                increment() {
+                    return this.counter++;
+                },
+                decrement() {
+                    return this.counter--;
+                }
+            }
+        })
+        const test = new Vue({ el: "#app" })
+    </script>
+</body>
+
+</html>
