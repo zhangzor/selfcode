@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 父模板 -->
+    <div id="app">
+        <cpn @cpnclick="cpnClick"></cpn>
+    </div>
+    <!-- 子模板 -->
+    <template id="apn">
+        <div>
+            <button v-for="item in usernames" @click="btnClick(item)">{{item.name}}</button>
+        </div>
+    </template>
+    <script src="../vue.js"></script>
+    <script>
+        const cpn = {
+            template: "#apn",
+            data() {
+                return {
+                    usernames: [
+                        { id: 1, name: "Zhang" },
+                        { id: 2, name: "Bin" },
+                        { id: 3, name: "Wayne" },
+                        { id: 4, name: "Del" },
+                        { id: 5, name: "Jeff" }
+                    ]
+                }
+            },
+            methods: {
+                btnClick(item) {
+                    // console.log(item);
+                    return this.$emit('cpnclick', item);
+                }
+            }
+        }
+        const test = new Vue({
+            el: "#app",
+            data: {
+                message: "加油"
+            },
+            methods: {
+                cpnClick(item) {
+                    console.log('cpnClick', item);
+                }
+            },
+            components: {
+                cpn
+            }
+        })
+    </script>
+</body>
+
+</html>

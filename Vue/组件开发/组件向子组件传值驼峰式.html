@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <cpn :user-names="username" :user-sex="usersex"></cpn>
+    </div>
+    <template id="apn">
+        <div>
+            <h2>{{userNames}}</h2>
+            <h2>{{userSex}}</h2>
+        </div>
+    </template>
+    <script src="../vue.js"></script>
+    <script>
+        const cpn = {
+            template: "#apn",
+            props: {
+                userNames: {
+                    type: Object,
+                    default() {
+                        return {}
+                    }
+                },
+                userSex: {
+                    type: String,
+                    default() {
+                        return {}
+                    }
+                }
+            },
+            data() {
+                return {
+                }
+            }
+        }
+        const test = new Vue({
+            el: "#app",
+            data: {
+                username: {
+                    name: "Zhangbin",
+                    sex: "man",
+                    age: 23
+                },
+                usersex: "男"
+            },
+            components: {
+                cpn
+            }
+        })
+    </script>
+</body>
+
+</html>

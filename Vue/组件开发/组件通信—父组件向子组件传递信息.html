@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <cpn :cnames="names" :cage="age"></cpn>
+    </div>
+    <template id="apn">
+        <div>
+            <ul>
+                <li v-for="item,index in cnames">{{item}}</li>
+            </ul>
+            <h2>{{cage}}</h2>
+        </div>
+    </template>
+    <script src="../vue.js"></script>
+    <script>
+        const cpn = {
+            template: "#apn",
+            props: ['cnames', 'cage'],
+            // props: {
+            //     //1、类型限制
+            //     cnames: Array,
+            //     cage: String
+            // },
+            //2、提供一些默认值，以及必传值
+            // cnames: {
+            //     type: String,
+            //     default: '笑死',
+            //     required: true
+            // },
+            data() {
+                return {
+                }
+            }
+        }
+        const test = new Vue({
+            el: "#app",
+            data: {
+                message: "笑话",
+                names: ['zhang', 'wayne', 'bin', 'del'],
+                age: 23
+            },
+            components: {
+                cpn
+            }
+        })
+    </script>
+</body>
+
+</html>
