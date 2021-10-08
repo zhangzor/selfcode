@@ -26,6 +26,8 @@
 1.使用git clone命令将新建的git 项目信息下载到本地
 git pull 也是拉取代码 / git pull origin 分支名
 git clone  git address
+切换分支
+git branch -M main
 2.进入git项目的本地文件夹，将自己的项目复制到这个git 文件夹，查看状态，提交所有的新文件
 git status 
 git add -A
